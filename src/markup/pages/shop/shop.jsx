@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {Link } from 'react-router-dom';
 import {Link as ScrollTo} from 'react-scroll';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap'
-
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits, Pagination, Highlight } from 'react-instantsearch-dom';
+import css from '../../../App.css'
 // Layout
 import Header from '../../layout/header/header1';
 import Footer from '../../layout/footer/footer1';
@@ -20,163 +22,93 @@ import ProductPic7 from "../../../images/product/pic7.jpg"
 import ProductPic8 from "../../../images/product/pic8.jpg"
 import ProductPic9 from "../../../images/product/pic9.jpg"
 
-const content = [
-	{
-		thumb: ProductPic1,
-        title: "Solid Men Beige",
-		price: "$19.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic2,
-        title: "Solid Men Beige",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic3,
-        title: "White T-Shirt",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic4,
-        title: "Solid Men Cargoss",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic5,
-        title: "Men Shapewear",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic6,
-        title: "Dark Blue Track Pants",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic7,
-        title: "Graphic Print Men",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic8,
-        title: "Self Design Men",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic9,
-        title: "Women Round Neck",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic1,
-        title: "Neck White T-Shirt",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic2,
-        title: "Beige Track Pants",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-	{
-		thumb: ProductPic3,
-        title: "Bottle with Leather Grip",
-		price: "$49.00",
-		disPrice: "$59.00",
-    },
-]
+function Hit(props) {
+  const { hit } = props;
+  return (
+    <div>
+      <div className="item-box">
+        <div className="item-media">
+          <img src={hit.image ? hit.image : 'https://via.placeholder.com/250.png'} alt={hit.name} />
+          <ul>
+            <li>
+              <OverlayTrigger overlay={<Tooltip id="addToCart">Add To Cart</Tooltip>}>
+                <Link to={"#"}>
+                  <i className="fa fa-shopping-bag"></i>
+                </Link>
+              </OverlayTrigger>
+            </li>
+            <li>
+              <OverlayTrigger overlay={<Tooltip id="addToWishlist">Add To Wishlist</Tooltip>}>
+                <Link to={"#"}>
+                  <i className="fa fa-heart"></i>
+                </Link>
+              </OverlayTrigger>
+            </li>
+          </ul>
+        </div>
+        <div className="item-info">
+          <h6 className="title">
+            <Link to="shop-details">
+              <Highlight attribute="name" hit={props.hit} />
+            </Link>
+          </h6>
+          <div className="price">
+            <span>{hit.price}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 class Shop extends Component {
-	
-	render(){
-		return (
-			<>
-				<Header />
-				
-				<div className="page-content bg-white">
-					<div className="page-banner ovpr-dark overlay-dotted ovdt2 parallax" style={{backgroundImage: "url("+bannerPic1+")"}}>
-						<div className="container">
-							<div className="page-banner-entry">
-								<h1 className="text-white">Shop</h1>
-								<div className="breadcrumb-row">
-									<ul className="list-inline">
-										<li><Link to="/"><i className="fa fa-home"></i>Home</Link></li>
-										<li>Shop</li>
-									</ul>
-								</div>
-							 </div>
-						</div>
-						<ScrollTo smooth={true} to="content-area" className="banner-bottom scroll-page"><i className="ti-arrow-down"></i></ScrollTo>
-					</div>
-					
-					<div className="content-block" id="content-area">
-						
-						<div className="section-area section-sp2 bg-gray" style={{backgroundImage: "url("+pattern1+")"}}>
-							<div className="container">
-								<div className="row">
-									{content.map((item, id) => (
-										<div className="col-lg-3 col-md-6 col-sm-6">
-											<div className="item-box">
-												<div className="item-media">
-													<img src={item.thumb} alt=""/>
-													<ul>
-														<li>
-															<OverlayTrigger overlay={<Tooltip id="addToCart">Add To Cart</Tooltip>}>
-																<Link to={"#"}>
-																	<i className="fa fa-shopping-bag"></i>
-																</Link>
-															</OverlayTrigger>
-														</li>
-														<li>
-															<OverlayTrigger overlay={<Tooltip id="addToWishlist">Add To Wishlist</Tooltip>}>
-																<Link to={"#"}>
-																	<i className="fa fa-heart"></i>
-																</Link>
-															</OverlayTrigger>
-														</li>
-													</ul>
-												</div>
-												<div className="item-info">
-													<h6 className="title"><Link to="shop-details">{item.title}</Link></h6>
-													<div className="price">
-														<span>{item.price}</span>
-														<del>{item.disPrice}</del>
-													</div>
-												</div>
-											</div>
-										</div>
-									))}
-								</div>
-								<div className="pagination-bx rounded-sm text-center clearfix m-b0 page-shadow">
-									<ul className="pagination">
-										<li className="previous"><Link to="#">Prev</Link></li>
-										<li className="active"><Link to="#">1</Link></li>
-										<li><Link to="#">2</Link></li>
-										<li><Link to="#">3</Link></li>
-										<li className="next"><Link to="#">Next</Link></li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						
-					</div>
-					
-				</div>
-				
-				<Footer />
-				
-			</>
-		);
-	}
+  render(){
+    const searchClient = algoliasearch('CG5KK6RMZU', '7bd4c591fd4ba8cd9610646b8e3af30c');
+
+    return (
+      <>
+        <Header />
+
+        <div className="page-content bg-white">
+          <div className="page-banner ovpr-dark overlay-dotted ovdt2 parallax" style={{backgroundImage: "url("+bannerPic1+")"}}>
+            <div className="container">
+              <div className="page-banner-entry">
+                <h1 className="text-white">Shop</h1>
+                <div className="breadcrumb-row">
+                  <ul className="list-inline">
+                    <li><Link to="/"><i className="fa fa-home"></i>Home</Link></li>
+                    <li>Shop</li>
+                  </ul>
+                </div>
+                </div>
+            </div>
+            <ScrollTo smooth={true} to="content-area" className="banner-bottom scroll-page"><i className="ti-arrow-down"></i></ScrollTo>
+          </div>
+          <InstantSearch searchClient={searchClient} indexName="ecommerce_github">
+            <div className="content-block" id="content-area">
+              <div className="section-area section-sp2 bg-gray" style={{ display: 'flex', justifyContent: 'center', backgroundImage: "url(" + pattern1 + ")" }}>
+                <SearchBox />
+              </div>
+              <div className="section-area section-sp2 bg-gray" style={{backgroundImage: "url("+pattern1+")"}}>
+                <div className="container">
+                  <div className="row">
+                    <Hits hitComponent={Hit} />
+                  </div>
+                  <div className="pagination-bx rounded-sm text-center clearfix m-b0 page-shadow">
+                    <Pagination />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </InstantSearch>
+        </div>
+
+        <Footer />
+
+      </>
+    );
+  }
 }
 
 export default Shop;

@@ -28,6 +28,34 @@
   color: #61dafb;
 }
 
+.ais-Hits {
+  width: 100% !important;
+}
+
+.ais-Hits-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ais-Hits-item {
+  width: 33% !important;
+  margin: 30px;
+  min-height: 450px;
+}
+
+.ais-Hits-item .item-box {
+  min-height: 350px;
+}
+
+.item-media {
+  text-align: center;
+  min-height: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

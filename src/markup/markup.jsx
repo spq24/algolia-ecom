@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom' 
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 // Elements
 import BackToTop from './elements/back-top';
@@ -79,54 +79,54 @@ class Markup extends Component{
 	render(){
 		return(
 			<>
-				<BrowserRouter basename={'/react/'}>
+				<BrowserRouter>
 					<Switch>
-					
+
 						{/* Home Pages */}
-						<Route path='/' exact component={Index} />
+						<Route path='/' exact component={Shop} />
 						<Route path='/index-2' exact component={Index2} />
 						<Route path='/index-3' exact component={Index3} />
-						
+
 						{/* About Pages */}
 						<Route path='/about-1' exact component={AboutUs1} />
 						<Route path='/about-2' exact component={AboutUs2} />
 						<Route path='/about-3' exact component={AboutUs3} />
-						
+
 						{/* Services Pages */}
 						<Route path='/services-1' exact component={Services1} />
 						<Route path='/services-2' exact component={Services2} />
 						<Route path='/services-3' exact component={Services3} />
 						<Route path='/services-details' exact component={ServicesDetails} />
-						
+
 						{/* Company History Pages */}
 						<Route path='/company-history-1' exact component={CompanyHistory1} />
 						<Route path='/company-history-2' exact component={CompanyHistory2} />
-						
+
 						{/* My Account Pages */}
 						<Route path='/my-account' exact component={MyAccount} />
-						
+
 						{/* Event Pages */}
 						<Route path='/event' exact component={Event} />
-						
+
 						{/* Team Pages */}
 						<Route path='/team' exact component={Team} />
-						
+
 						{/* Faq Pages */}
 						<Route path='/faq-1' exact component={Faq} />
-						
+
 						{/* Contact Pages */}
 						<Route path='/contact-1' exact component={Contact1} />
-						
+
 						{/* Error Pages */}
 						<Route path='/error-404' exact component={Error404} />
-						
+
 						{/* Shop Pages */}
 						<Route path='/shop' component={Shop} />
 						<Route path='/shop-cart' component={ShopCart} />
 						<Route path='/shop-checkout' component={ShopCheckout} />
 						<Route path='/shop-details' component={ShopDetails} />
 						<Route path='/shop-sidebar' component={ShopSidebar} />
-						
+
 						{/* Portfolio Pages */}
 						<Route path='/portfolio-grid-2' component={PortfolioGrid2} />
 						<Route path='/portfolio-grid-3' component={PortfolioGrid3} />
@@ -145,7 +145,7 @@ class Markup extends Component{
 						<Route path='/portfolio-single-2' component={PortfolioSingle2} />
 						<Route path='/portfolio-single-3' component={PortfolioSingle3} />
 						<Route path='/portfolio-single-4' component={PortfolioSingle4} />
-						
+
 						{/* Blog Pages */}
 						<Route path='/blog-standard' component={BlogStandard} />
 						<Route path='/blog-classic' component={BlogClassic} />
@@ -153,12 +153,12 @@ class Markup extends Component{
 						<Route path='/blog-list' component={BlogList} />
 						<Route path='/blog-masonry' component={BlogMasonry} />
 						<Route path='/blog-details-sidebar' component={BlogDetailsSidebar} />
-						
+
 					</Switch>
 				</BrowserRouter>
-				
+
 				<BackToTop />
-				
+
 			</>
 		);
 	}

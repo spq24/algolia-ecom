@@ -1,6 +1,5 @@
 {
   "name": "algolia-ecom",
-  "homepage": "https://spq24.github.io/algolia-ecom",
   "version": "0.1.0",
   "dependencies": {
     "@algolia/autocomplete-plugin-query-suggestions": "^1.0.0",
@@ -24,6 +23,7 @@
     "react-sticky": "^6.0.3",
     "react-stickynode": "^3.0.4",
     "react-visibility-sensor": "^5.1.1",
+    "serve": "^11.3.2",
     "simple-react-lightbox": "^3.5.4",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^0.2.4"

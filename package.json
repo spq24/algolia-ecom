@@ -1,8 +1,7 @@
 {
   "name": "algolia-ecom",
-  "homepage": "http://spq24.github.io/algolia-ecom",
+  "homepage": "https://spq24.github.io/algolia-ecom",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@algolia/autocomplete-plugin-query-suggestions": "^1.0.0",
     "@testing-library/jest-dom": "^5.11.9",

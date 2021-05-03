@@ -9,7 +9,7 @@ import Header from '../../layout/header/header1';
 import Footer from '../../layout/footer/footer1';
 
 // Elements
-import ProductSlider from "../../elements/shop/product-slider";
+//import ProductSlider from "../../elements/shop/product-slider";
 
 // Images
 import Banner4 from "../../../images/banner/banner4.jpg"

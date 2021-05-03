@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/algolia-ecom/static/css/main.9f0ee83b.chunk.css",
-    "main.js": "/algolia-ecom/static/js/main.98910cc9.chunk.js",
-    "main.js.map": "/algolia-ecom/static/js/main.98910cc9.chunk.js.map",
+    "main.js": "/algolia-ecom/static/js/main.e70ab21a.chunk.js",
+    "main.js.map": "/algolia-ecom/static/js/main.e70ab21a.chunk.js.map",
     "runtime-main.js": "/algolia-ecom/static/js/runtime-main.f66b46ba.js",
     "runtime-main.js.map": "/algolia-ecom/static/js/runtime-main.f66b46ba.js.map",
     "static/css/2.00d04e42.chunk.css": "/algolia-ecom/static/css/2.00d04e42.chunk.css",
-    "static/js/2.d5a0e070.chunk.js": "/algolia-ecom/static/js/2.d5a0e070.chunk.js",
-    "static/js/2.d5a0e070.chunk.js.map": "/algolia-ecom/static/js/2.d5a0e070.chunk.js.map",
+    "static/js/2.aecef1fe.chunk.js": "/algolia-ecom/static/js/2.aecef1fe.chunk.js",
+    "static/js/2.aecef1fe.chunk.js.map": "/algolia-ecom/static/js/2.aecef1fe.chunk.js.map",
     "static/js/3.8bd5793b.chunk.js": "/algolia-ecom/static/js/3.8bd5793b.chunk.js",
     "static/js/3.8bd5793b.chunk.js.map": "/algolia-ecom/static/js/3.8bd5793b.chunk.js.map",
     "index.html": "/algolia-ecom/index.html",
     "static/css/2.00d04e42.chunk.css.map": "/algolia-ecom/static/css/2.00d04e42.chunk.css.map",
     "static/css/main.9f0ee83b.chunk.css.map": "/algolia-ecom/static/css/main.9f0ee83b.chunk.css.map",
-    "static/js/2.d5a0e070.chunk.js.LICENSE.txt": "/algolia-ecom/static/js/2.d5a0e070.chunk.js.LICENSE.txt",
+    "static/js/2.aecef1fe.chunk.js.LICENSE.txt": "/algolia-ecom/static/js/2.aecef1fe.chunk.js.LICENSE.txt",
     "static/media/flaticon.css": "/algolia-ecom/static/media/Flaticon.b79544e3.woff",
     "static/media/adv.fe4c0159.jpg": "/algolia-ecom/static/media/adv.fe4c0159.jpg",
     "static/media/banner1.71710e52.jpg": "/algolia-ecom/static/media/banner1.71710e52.jpg",
@@ -147,8 +147,8 @@
   "entrypoints": [
     "static/js/runtime-main.f66b46ba.js",
     "static/css/2.00d04e42.chunk.css",
-    "static/js/2.d5a0e070.chunk.js",
+    "static/js/2.aecef1fe.chunk.js",
     "static/css/main.9f0ee83b.chunk.css",
-    "static/js/main.98910cc9.chunk.js"
+    "static/js/main.e70ab21a.chunk.js"
   ]
 }

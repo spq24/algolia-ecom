@@ -4,7 +4,6 @@ import {Link as ScrollTo} from 'react-scroll';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap'
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Pagination, Highlight } from 'react-instantsearch-dom';
-import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions'
 import css from '../../../App.css'
 // Layout
 import Header from '../../layout/header/header1';
@@ -13,15 +12,15 @@ import Footer from '../../layout/footer/footer1';
 // Images
 import bannerPic1 from '../../../images/banner/banner1.jpg';
 import pattern1 from '../../../images/pattern/pt1.png';
-import ProductPic1 from "../../../images/product/pic1.jpg"
-import ProductPic2 from "../../../images/product/pic2.jpg"
-import ProductPic3 from "../../../images/product/pic3.jpg"
-import ProductPic4 from "../../../images/product/pic4.jpg"
-import ProductPic5 from "../../../images/product/pic5.jpg"
-import ProductPic6 from "../../../images/product/pic6.jpg"
-import ProductPic7 from "../../../images/product/pic7.jpg"
-import ProductPic8 from "../../../images/product/pic8.jpg"
-import ProductPic9 from "../../../images/product/pic9.jpg"
+// import ProductPic1 from "../../../images/product/pic1.jpg"
+// import ProductPic2 from "../../../images/product/pic2.jpg"
+// import ProductPic3 from "../../../images/product/pic3.jpg"
+// import ProductPic4 from "../../../images/product/pic4.jpg"
+// import ProductPic5 from "../../../images/product/pic5.jpg"
+// import ProductPic6 from "../../../images/product/pic6.jpg"
+// import ProductPic7 from "../../../images/product/pic7.jpg"
+// import ProductPic8 from "../../../images/product/pic8.jpg"
+// import ProductPic9 from "../../../images/product/pic9.jpg"
 
 function Hit(props) {
 

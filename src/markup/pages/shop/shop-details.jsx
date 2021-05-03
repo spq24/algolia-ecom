@@ -14,13 +14,13 @@ import ProductSlider from "../../elements/shop/product-slider";
 // Images
 import Banner4 from "../../../images/banner/banner4.jpg"
 import pattern1 from '../../../images/pattern/pt1.png';
-import ProductPic1 from "../../../images/product/pic2.jpg"
-import ProductPic2 from "../../../images/product/pic3.jpg"
-import ProductPic3 from "../../../images/product/pic4.jpg"
-import ProductPic4 from "../../../images/product/pic5.jpg"
-import TestiPic1 from "../../../images/testimonials/pic1.jpg"
-import TestiPic2 from "../../../images/testimonials/pic2.jpg"
-import TestiPic3 from "../../../images/testimonials/pic3.jpg"
+// import ProductPic1 from "../../../images/product/pic2.jpg"
+// import ProductPic2 from "../../../images/product/pic3.jpg"
+// import ProductPic3 from "../../../images/product/pic4.jpg"
+// import ProductPic4 from "../../../images/product/pic5.jpg"
+// import TestiPic1 from "../../../images/testimonials/pic1.jpg"
+// import TestiPic2 from "../../../images/testimonials/pic2.jpg"
+// import TestiPic3 from "../../../images/testimonials/pic3.jpg"
 
 class ShopDetails extends Component {
 
@@ -155,7 +155,7 @@ class ShopDetails extends Component {
                         </div>
                         <div className="tagged_as meta-item">
                           <h6 className="title">Details:</h6>
-                          <a href={product.url} target="_blank">bestbuy.com <i className="fa fa-external-link"></i></a>
+                          <a href={product.url} target="_blank" rel="noreferrer">bestbuy.com <i className="fa fa-external-link"></i></a>
                         </div>
                       </div>
                     </div>

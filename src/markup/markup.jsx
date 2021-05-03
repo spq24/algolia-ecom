@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import BackToTop from './elements/back-top';
 
 // Home Pages
-import Index from './pages/home/index';
+// import Index from './pages/home/index';
 import Index2 from './pages/home/index-2';
 import Index3 from './pages/home/index-3';
 

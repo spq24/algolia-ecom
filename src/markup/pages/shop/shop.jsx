@@ -4,6 +4,7 @@ import {Link as ScrollTo} from 'react-scroll';
 import {OverlayTrigger, Tooltip} from 'react-bootstrap'
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits, Pagination, Highlight } from 'react-instantsearch-dom';
+import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions'
 import css from '../../../App.css'
 // Layout
 import Header from '../../layout/header/header1';
@@ -23,12 +24,14 @@ import ProductPic8 from "../../../images/product/pic8.jpg"
 import ProductPic9 from "../../../images/product/pic9.jpg"
 
 function Hit(props) {
+
   const { hit } = props;
+
   return (
     <div>
       <div className="item-box">
         <div className="item-media">
-          <img src={hit.image ? hit.image : 'https://via.placeholder.com/250.png'} alt={hit.name} />
+          <img src={hit.thumbnailImage ? hit.thumbnailImage : 'https://via.placeholder.com/250.png'} alt={hit.name} />
           <ul>
             <li>
               <OverlayTrigger overlay={<Tooltip id="addToCart">Add To Cart</Tooltip>}>
@@ -48,12 +51,12 @@ function Hit(props) {
         </div>
         <div className="item-info">
           <h6 className="title">
-            <Link to="shop-details">
+            <Link to={`/products/${hit.objectID}`}>
               <Highlight attribute="name" hit={props.hit} />
             </Link>
           </h6>
           <div className="price">
-            <span>{hit.price}</span>
+            <span>${hit.salePrice}</span>
           </div>
         </div>
       </div>
@@ -62,6 +65,8 @@ function Hit(props) {
 }
 
 class Shop extends Component {
+
+
   render(){
     const searchClient = algoliasearch('CG5KK6RMZU', '7bd4c591fd4ba8cd9610646b8e3af30c');
 
@@ -86,16 +91,26 @@ class Shop extends Component {
           </div>
           <InstantSearch searchClient={searchClient} indexName="ecommerce_github">
             <div className="content-block" id="content-area">
-              <div className="section-area section-sp2 bg-gray" style={{ display: 'flex', justifyContent: 'center', backgroundImage: "url(" + pattern1 + ")" }}>
+              <div className="section-area section-sp2 bg-gray" style={{ paddingBottom: '0px', display: 'flex', justifyContent: 'center', backgroundImage: "url(" + pattern1 + ")" }}>
                 <SearchBox />
               </div>
-              <div className="section-area section-sp2 bg-gray" style={{backgroundImage: "url("+pattern1+")"}}>
+              <div className="section-area section-sp2 bg-gray" style={{ paddingTop: '50px', backgroundImage: "url("+pattern1+")"}}>
                 <div className="container">
                   <div className="row">
                     <Hits hitComponent={Hit} />
                   </div>
                   <div className="pagination-bx rounded-sm text-center clearfix m-b0 page-shadow">
                     <Pagination />
+
+                  {/* <div className="pagination-bx rounded-sm text-center clearfix m-b0 page-shadow">
+                    <ul className="pagination">
+                      <li className="previous"><Link to="#">Prev</Link></li>
+                      <li className="active"><Link to="#">1</Link></li>
+                      <li><Link to="#">2</Link></li>
+                      <li><Link to="#">3</Link></li>
+                      <li className="next"><Link to="#">Next</Link></li>
+                    </ul>
+                  </div> */}
                   </div>
                 </div>
               </div>

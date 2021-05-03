@@ -46,6 +46,7 @@
 
 .ais-Hits-item .item-box {
   min-height: 350px;
+  min-width: 340px;
 }
 
 .item-media {
@@ -53,6 +54,25 @@
   min-height: 225px;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.ais-SearchBox-form {
+  background-color: transparent;
+}
+
+.ais-SearchBox {
+  width: 30%;
+  padding-bottom: 0px;
+  background: transparent;
+}
+
+.ais-SearchBox input {
+  border-radius: 15px;
+}
+
+.pagination-bx {
+  display: flex;
   justify-content: center;
 }
 

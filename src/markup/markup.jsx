@@ -124,7 +124,7 @@ class Markup extends Component{
 						<Route path='/shop' component={Shop} />
 						<Route path='/shop-cart' component={ShopCart} />
 						<Route path='/shop-checkout' component={ShopCheckout} />
-						<Route path='/shop-details' component={ShopDetails} />
+						<Route path='/products/:id' component={ShopDetails} />
 						<Route path='/shop-sidebar' component={ShopSidebar} />
 
 						{/* Portfolio Pages */}

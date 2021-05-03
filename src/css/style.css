@@ -6220,6 +6220,15 @@ footer.footer-white .btn {
 	max-width:50px;
 	width:50px;
 }
+
+.product-info .product-img {
+	display: flex;
+	min-height: 30vh;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+}
+
 .cart-box{
 	display:flex;
 	position: relative;

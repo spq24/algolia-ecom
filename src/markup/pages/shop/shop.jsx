@@ -67,7 +67,7 @@ class Shop extends Component {
 
 
   render(){
-    const searchClient = algoliasearch('CG5KK6RMZU', '7bd4c591fd4ba8cd9610646b8e3af30c');
+    const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_KEY, process.env.REACT_APP_ALGOLIA_SECRET);
 
     return (
       <>

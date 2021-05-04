@@ -41,7 +41,7 @@ class ShopDetails extends Component {
 
 
   componentDidMount() {
-    const client = algoliasearch('CG5KK6RMZU', '7bd4c591fd4ba8cd9610646b8e3af30c');
+    const client = algoliasearch(process.env.REACT_APP_ALGOLIA_KEY, process.env.REACT_APP_ALGOLIA_SECRET);
     const index = client.initIndex('ecommerce_github');
     const id = window.location.pathname.split('/')[2]
     if(id) {

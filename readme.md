@@ -13,11 +13,14 @@ I set out in this excercise hoping to learn a bit more about Algolia, the dashbo
 
 I wanted to do this in a realistic way where I could see myself actually implementing this as a developer on a project so I chose the ecommerce dataset and then used an React e-commerce template them to implement Algolia's search into.
 
-**How I got started:**
+**How I set up the app:**
 1. I created an index using the dashboard
 2. I wrote a quick script in ruby to grab the JSON data from the github repo and then used the save_objects method on the index the data.
 3. I configured relevance settings and custom rankings metrics to furhter refine how the data will show up.
 4. I then used the React InstantSearch UI Widgets to implement the Algolia search into the react template.
+5. I implemented the shop page that lists all the products in a paginated list. I used the SearchBox, Pagination, and Highlight from the React Instant Search UI Widgets library.
+6. I implemented the product details page that shows an individual product. I grab the ObjectID from the URL and then used index.getObject(id) to retrieve the individual object and display the attributes.
+
 
 The documentation was great, the libraries were great, and I was amazed at how fast it was to index 10,000 objects, it took just a few seconds.
 

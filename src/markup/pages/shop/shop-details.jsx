@@ -46,7 +46,6 @@ class ShopDetails extends Component {
     const id = window.location.pathname.split('/')[2]
     if(id) {
       index.getObject(id).then(object => {
-        console.log(object);
         this.setState({
           name: object.name,
           categories: object.categories,
